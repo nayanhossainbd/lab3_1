@@ -1,20 +1,20 @@
-Implementation of First-Come, First-Served (FCFS) SchedulingDate: April 18, 2026
-Subject: Operating Systems LabTopic: Process Scheduling Algorithms
-1. ObjectiveTo implement the First-Come, First-Served (FCFS) scheduling algorithm in C++ to calculate and display the Waiting Time (WT) and Turnaround Time (TAT) for a given set of processes with specific arrival and burst times.
-2. TheoryFCFS is a non-preemptive scheduling algorithm where the process that requests the CPU first is allocated the CPU first. 
-  It is managed with a FIFO (First-In, First-Out) queue.Arrival Time (AT): The time at which the process arrives in the ready queue.
-  Burst Time (BT): The time required by the process for CPU execution.Completion Time (CT): The time at which the process finishes its execution.Turnaround Time (TAT): The total time spent by the process in the system.$$TAT = CT - AT$$
-  Waiting Time (WT): The time the process spent waiting in the ready queue.$$WT = TAT - BT$$
-3. Algorithm
-  Input the number of processes.
-  For each process, input its Arrival Time and Burst Time.
-  Sort the processes based on their Arrival Time (essential if inputs are not chronological).
-  Calculate Completion Time for each process:For the first process: $CT = AT + BT$.
-    For subsequent processes: If $AT > CT_{previous}$, then $CT = AT + BT$; 
-      else $CT = CT_{previous} + BT$.Calculate $TAT = CT - AT$ for all processes.
-  Calculate $WT = TAT - BT$ for all processes.
-  Calculate the average TAT and average WT.
-4. Implementation (C++)C++
+//Implementation of First-Come, First-Served (FCFS) SchedulingDate: April 18, 2026
+//Subject: Operating Systems LabTopic: Process Scheduling Algorithms
+//1. ObjectiveTo implement the First-Come, First-Served (FCFS) scheduling algorithm in C++ to calculate and display the Waiting Time (WT) and Turnaround Time (TAT) for a given set of processes with specific arrival and burst times.
+//2. TheoryFCFS is a non-preemptive scheduling algorithm where the process that requests the CPU first is allocated the CPU first. 
+  //It is managed with a FIFO (First-In, First-Out) queue.Arrival Time (AT): The time at which the process arrives in the ready queue.
+  //Burst Time (BT): The time required by the process for CPU execution.Completion Time (CT): The time at which the process finishes its execution.Turnaround Time (TAT): The total time spent by the process in the system.$$TAT = CT - AT$$
+  //Waiting Time (WT): The time the process spent waiting in the ready queue.$$WT = TAT - BT$$
+//3. Algorithm
+  //Input the number of processes.
+  //For each process, input its Arrival Time and Burst Time.
+  //Sort the processes based on their Arrival Time (essential if inputs are not chronological).
+  //Calculate Completion Time for each process:For the first process: $CT = AT + BT$.
+    //For subsequent processes: If $AT > CT_{previous}$, then $CT = AT + BT$; 
+      //else $CT = CT_{previous} + BT$.Calculate $TAT = CT - AT$ for all processes.
+  //Calculate $WT = TAT - BT$ for all processes.
+  //Calculate the average TAT and average WT.
+//4. Implementation (C++)C++ //
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -80,10 +80,11 @@ int main() {
     cout << "\nAverage Waiting Time: " << totalWT / n << endl;
 
     return 0;
-}
-5. Sample Output
-  Enter the number of processes: 3
-  Enter Arrival Time and Burst Time for Process 1: 0 5
-  Enter Arrival Time and Burst Time for Process 2: 1 3
-  Enter Arrival Time and Burst Time for Process 3: 2 8
+};
+
+// 5. Sample Output
+//  Enter the number of processes: 3
+//  Enter Arrival Time and Burst Time for Process 1: 0 5
+// Enter Arrival Time and Burst Time for Process 2: 1 3
+//  Enter Arrival Time and Burst Time for Process 3: 2 8 //
   
